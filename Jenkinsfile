@@ -10,7 +10,7 @@ pipeline{
             {
                 git branch: 'dev', url:'https://github.com/saikireeti123/spring-petclinic.git'
             }
-	}
+	   }
 	  stage('Build'){
 	      steps{
 	       echo "Build started"
@@ -19,5 +19,11 @@ pipeline{
 	
 	        }
         }
+		post{
+		always{
+		archiveArtifacts artifacts: '**/Target/*.jar'
+		}
+		
+		}
    }
    
