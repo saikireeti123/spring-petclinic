@@ -14,7 +14,7 @@ pipeline{
 	  stage('Build'){
 	      steps{
 	       echo "Build started"
-	        bat mvn clean validate package
+	        bat 'mvn clean validate package'
 	           }
 	
 	        }
