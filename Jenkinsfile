@@ -1,8 +1,8 @@
 pipeline{
   agent any
-  trigeer
-   {
-        pollSCM('H/5 * * * *')
+  triggers
+    {
+        pollSCM('* * * * *')
     }
 	stages{
 	  stage('git'){
