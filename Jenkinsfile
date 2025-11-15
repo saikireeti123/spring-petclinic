@@ -15,6 +15,5 @@ pipeline{
 	    bat 'mvn clean validate package'
 	  }
    }
-  }
-  
+  } 
 }
