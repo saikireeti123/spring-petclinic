@@ -16,7 +16,7 @@ pipeline {
    }
   } 
   post{
-    alWAYS{
+    always{
       archieveartifacts artifacts:'**/target/*.jar'
     }
   }
