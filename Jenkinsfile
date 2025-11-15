@@ -1,13 +1,12 @@
-pipeline{
+pipeline {
   agent any
   triggers{
-      pollSCM('H/2 * * * *')
+      pollSCM('* * * * *')
   }
   stages{
    stage('git'){
      steps{
-	     git url:'https://github.com/saikireeti123/spring-petclinic.git'
-		 git branch:'dev'
+	     git url:'https://github.com/saikireeti123/spring-petclinic.git', branch:'dev'
 	 }
    }
    stage('Build'){
@@ -16,4 +15,9 @@ pipeline{
 	  }
    }
   } 
+  post{
+    alWAYS{
+      archieveartifacts artifacts:'**/target/*.jar'
+    }
+  }
 }
