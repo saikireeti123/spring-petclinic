@@ -15,9 +15,9 @@ pipeline {
 	  }
    }
   } 
-  post{
-    always{
-      archieveartifacts artifacts:'**/target/*.jar'
-    }
+post{
+  always{
+      bat 'archiveArtifacts artifacts:'**/target/*.jar''
   }
+}
 }
