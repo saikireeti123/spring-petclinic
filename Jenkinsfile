@@ -20,4 +20,5 @@ post{
       archiveArtifacts artifacts:'**/target/*.jar'
   }
 }
+
 }
