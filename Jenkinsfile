@@ -17,7 +17,7 @@ pipeline {
   } 
 post{
   always{
-      bat 'archiveArtifacts artifacts:'**/target/*.jar''
+      archiveArtifacts artifacts:'**/target/*.jar'
   }
 }
 }
