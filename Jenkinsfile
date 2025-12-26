@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   triggers{
       pollSCM('H/5 * * * *')
   }
@@ -10,6 +10,7 @@ pipeline {
 	 }
    }
    stage('Build'){
+       agent { label 'java' } 
       steps{
 	    bat 'mvn clean validate package'
 	  }
